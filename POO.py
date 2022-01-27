@@ -35,6 +35,9 @@ class Persona:
 class Rock(Persona):
     gusto = "Música Rock"
 
+class Pop(Persona):
+    gusto = "Música Pop"
+    artistas_favoritos = ["Artista pop"]
 
 
 if __name__ == '__main__':
@@ -44,9 +47,18 @@ if __name__ == '__main__':
     jose.password = "1234"
     print(jose.password)
 
-    # Juan Diego Arenas
-    # Ivan Foto Rick
-    # Oriana Osorio
-    # Abstracción, Herencia, Polimorfismo, Encapsulamiento
+    maxi = Pop("Maximiliano Colque", 23, "Argentina", "Masculino")
+    print(maxi.gusto)
 
+    lista_personas = [jose, maxi]
 
+    for persona in lista_personas:
+        print(persona.nombre)
+        print(persona.gusto)
+        print(persona.edad)
+        if hasattr(persona,'artistas_favoritos'):
+            print(persona.artistas_favoritos)
+
+    edades = [persona.edad for persona in lista_personas ]
+
+    print(edades)
